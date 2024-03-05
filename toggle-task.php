@@ -4,8 +4,6 @@ include 'data.php';
 $id = $_REQUEST['id'] ?? null;
 $done = $_REQUEST['done'] === '1' ? false : true;
 
-var_dump($id);
-var_dump($done);
 if ($id) {
     $tasks = get_tasks();
 
@@ -20,4 +18,4 @@ if ($id) {
     save_tasks($tasks);
 }
 
-//header('Location: overview-tasks.php');
+//header('Location: overview.php');

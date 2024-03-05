@@ -89,13 +89,13 @@ $tasks = get_tasks();
                         <form action="/todolist/toggle-task.php" method="post">
                             <input type="hidden" name="id" value="<?= $task['id'] ?>" />
                             <input type="hidden" name="done" value="<?= $task['done'] ?>" />
-                            <button type="submit">
-                                <?= $task['done'] ? 'Undo' : 'Mark as done' ?>
+                            <button type="submit"><a href="/todolist/toggle-task.php?id=<?= $task['id'] ?>+done=<?= $task['done'] ?>">
+                                    <?= $task['done'] ? 'Undo' : 'Mark as done' ?></a>
                             </button>
                         </form>
                         <form action="/todolist/delete-task.php" method="post">
                             <input type="hidden" name="id" value="<?= $task['id'] ?>" />
-                            <button type="submit"><a>❌</a></button>
+                            <button type="submit"><a href="/todolist/delete-task.php?id=<?= $task['id'] ?>">❌</a></button>
                         </form>
                     </div>
                 </form>
