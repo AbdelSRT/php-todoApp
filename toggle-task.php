@@ -18,4 +18,4 @@ if ($id) {
     save_tasks($tasks);
 }
 
-//header('Location: overview.php');
+header('Location: overview.php');

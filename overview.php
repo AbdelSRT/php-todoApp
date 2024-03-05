@@ -66,39 +66,38 @@ $tasks = get_tasks();
 
 
 <body>
-
+    <?php include "nav.php" ?>
     <div class="container">
-        <?php include "nav.php" ?>
+
 
         <h1>All Tasks</h1>
         <?php foreach ($tasks as $task) : ?>
             <div class="task <?= $task['done'] ? 'task--done' : '' ?>" style="border: 2px solid; margin-right: 2rem; margin-left: 2rem; padding:2rem; margin-bottom:1rem; display:flex; flex-direction: row;">
-                <form method="post" style="display:flex; align-items: center; width: 100%; justify-content: space-between;">
 
-                    <div>
-                        <a href="./task.php?id=<?php echo $task['id'] ?>">
-                            <div class="<?= $task['done'] ? 'task-name--done' : '' ?>">
-                                <?php echo $task['title']; ?>
-                            </div>
-                        </a>
-                    </div>
 
-                    <div class="task-actions">
-                        <button><a href="/todolist/edit.php?id=<?= $task['id'] ?>">Bewerken</a></button>
-                        <button><a href="/todolist/detail-task.php?id=<?= $task['id'] ?>">Details</a></button>
-                        <form action="/todolist/toggle-task.php" method="post">
-                            <input type="hidden" name="id" value="<?= $task['id'] ?>" />
-                            <input type="hidden" name="done" value="<?= $task['done'] ?>" />
-                            <button type="submit"><a href="/todolist/toggle-task.php?id=<?= $task['id'] ?>+done=<?= $task['done'] ?>">
-                                    <?= $task['done'] ? 'Undo' : 'Mark as done' ?></a>
-                            </button>
-                        </form>
-                        <form action="/todolist/delete-task.php" method="post">
-                            <input type="hidden" name="id" value="<?= $task['id'] ?>" />
-                            <button type="submit"><a href="/todolist/delete-task.php?id=<?= $task['id'] ?>">❌</a></button>
-                        </form>
-                    </div>
-                </form>
+                <div>
+                    <a href="./task.php?id=<?php echo $task['id'] ?>">
+                        <div class="<?= $task['done'] ? 'task-name--done' : '' ?>">
+                            <?php echo $task['title']; ?>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="task-actions">
+                    <button><a href="/todolist/edit.php?id=<?= $task['id'] ?>">Bewerken</a></button>
+                    <button><a href="/todolist/detail-task.php?id=<?= $task['id'] ?>">Details</a></button>
+                    <form action="/todolist/toggle-task.php" method="post">
+                        <input type="hidden" name="id" value="<?= $task['id'] ?>" />
+                        <input type="hidden" name="done" value="<?= $task['done'] ?>" />
+                        <button type="submit">
+                            <?= $task['done'] ? 'Undo' : 'Mark as done' ?>
+                        </button>
+                    </form>
+                    <form action="/todolist/delete-task.php" method="post">
+                        <input type="hidden" name="id" value="<?= $task['id'] ?>" />
+                        <button type="submit">❌</button>
+                    </form>
+                </div>
             </div>
 
         <?php endforeach; ?>

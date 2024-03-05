@@ -62,9 +62,9 @@ if (isset($_REQUEST['submit'])) {
 
 
 <body>
-
+    <?php include "nav.php" ?>
     <div class="container">
-        <?php include "nav.php" ?>
+
         <h1>Taak toevoegen</h1>
         <form action="<?= $_SERVER['PHP_SELF'] ?>">
             <label for="title">Titel</label><br>
