@@ -95,7 +95,7 @@ $tasks = get_tasks();
                         </form>
                         <form action="/todolist/delete-task.php" method="post">
                             <input type="hidden" name="id" value="<?= $task['id'] ?>" />
-                            <button type="submit"><a href="/todolist/delete-task.php?id=<?= $task['id'] ?>">❌</a></button>
+                            <button type="submit"><a>❌</a></button>
                         </form>
                     </div>
                 </form>
