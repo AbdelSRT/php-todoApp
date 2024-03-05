@@ -1,0 +1,44 @@
+table,
+th,
+td {
+    border: 1px solid;
+    text-align: center;
+}
+
+th {
+    background-color: cadetblue;
+}
+
+table {
+    width: 100%;
+    min-width: 30rem;
+    flex-wrap: wrap;
+}
+
+.id {
+    width: 10rem;
+}
+
+.bool {
+    width: 10rem;
+}
+
+a {
+    all: unset;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.card {
+    border: 2px solid;
+}
+
+h1 {
+    color: red;
+}
